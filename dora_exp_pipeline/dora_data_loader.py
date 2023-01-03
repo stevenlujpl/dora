@@ -307,7 +307,8 @@ class TimeSeriesLoader(DataLoader):
                 for row in csv_reader:
                     # Assumes the first column is the ID
                     # and all other columns are time steps
-                    data_dict['id'].append(str(int(row[0])))
+                    # data_dict['id'].append(str(int(row[0])))
+                    data_dict['id'].append(str(row[0]))
                     data_dict['data'].append(np.array(row[1:]))
         else:
             raise RuntimeError(f'File extension not supported. '
